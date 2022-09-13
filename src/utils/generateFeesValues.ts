@@ -51,6 +51,7 @@ export default GenerateFees;
 export const monthCalculate = ({ fees }: IFeesMonth) => {
   const date = new Date();
   let month = date.getMonth();
+  let day = date.getDate()
   let year = date.getFullYear();
   let twoDigitsYear = Number(year.toString().substr(-2));
   const parcelasDates = fees.map((value) => {
@@ -66,7 +67,7 @@ export const monthCalculate = ({ fees }: IFeesMonth) => {
       fees,
       debt,
       installment,
-      month: `${month}/${twoDigitsYear}`,
+      month: `${day}/${month}/${twoDigitsYear}`,
     };
 
     return date;

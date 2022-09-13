@@ -13,8 +13,8 @@ export default class LoanCalculate {
     const calculatedPorcentage = getPorcentageBasedOnUF(uf);
 
     const calculateMinimumValue = calculatedPorcentage * (value / 100);
-    value.toFixed(2);
-    portion.toFixed(2);
+    Number(value.toFixed(2));
+    Number(portion.toFixed(2));
     if (!moment(birth_date, "DD-MM-YYYY", true).isValid()) {
       throw new AppError(400, "Data de nascimento invalida");
     }
@@ -53,7 +53,8 @@ export default class LoanCalculate {
       required_value: transformCurrencyToBrl(value),
       fessPerMonth: `${calculatedPorcentage}% ao mês`,
       amountPeerMonth: transformCurrencyToBrl(portion),
-      installments: addMonth,
+      totalToPay : transformCurrencyToBrl(sum + value),
+      installments: addMonth
     };
 
     return loanCalculated;
