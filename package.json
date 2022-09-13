@@ -23,6 +23,6 @@
     "dev": "ts-node-dev src/app.ts",
     "typeorm": "typeorm-ts-node-commonjs",
     "build": "tsc",
-    "start": "node src/app.js"
+    "start": "node dist/app.js"
   }
 }
