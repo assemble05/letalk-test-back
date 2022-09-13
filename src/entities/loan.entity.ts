@@ -12,22 +12,22 @@ export class Loan {
   @Column({ type: "varchar", width: 256, nullable: false, unique: true })
   cpf: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   fees: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   monthToPay: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   required_value: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   fessPerMonth: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   amountPeerMonth: string;
 
-  @Column({ type: "varchar", width: 256, nullable: false, unique: true })
+  @Column({ type: "varchar", width: 256, nullable: false, unique: false })
   totalToPay: string;
 
   @Column({ type: "jsonb", nullable: false, array: false, default: () => "'[]'" })

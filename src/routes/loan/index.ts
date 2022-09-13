@@ -5,7 +5,7 @@ const loanRoute = express.Router();
 
 loanRoute
   .route("")
-  .post(LoanController.show)
+  .post(LoanController.show).get(LoanController.index)
 
 loanRoute.route("/confirmation").post(LoanController.store)
 

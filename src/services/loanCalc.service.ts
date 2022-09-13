@@ -13,6 +13,12 @@ export default class LoanCalculate {
     const calculatedPorcentage = getPorcentageBasedOnUF(uf);
 
     const calculateMinimumValue = calculatedPorcentage * (value / 100);
+    if(!value){
+      throw new AppError(400, "Valor desejado necessario");
+    }
+    if(!portion){
+      throw new AppError(400, "Valor desejado necessario");
+    }
     Number(value.toFixed(2));
     Number(portion.toFixed(2));
     if (!moment(birth_date, "DD-MM-YYYY", true).isValid()) {
