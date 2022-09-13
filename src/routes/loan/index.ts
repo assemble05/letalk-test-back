@@ -7,4 +7,6 @@ loanRoute
   .route("")
   .post(LoanController.show)
 
+loanRoute.route("/confirmation").post(LoanController.store)
+
 export default loanRoute;
